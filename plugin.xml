@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.simplec.plugins.volumeslider"
+	version="0.1.0">
+
+	<name>VolumeSlider</name>
+	
+		<description>
+			This plugin display native volume slider iOS.
+		</description>
+	
+		<license>MIT</license>
+		
+	<engines>
+		<engine name="cordova" version=">=2.3.0" />
+	</engines>
+	
+	
+	<asset src="www/VolumeSlider.js" target="VolumeSlider.js" />
+	
+	<!-- ios -->
+	<platform name="ios">
+		<!-- Cordova < 2.3 -->
+        <plugins-plist key="VolumeSlider" string="VolumeSlider" />
+        
+		<!-- Cordova >= 2.3 -->
+		<config-file target="config.xml" parent="plugins">
+			<plugin name="VolumeSlider" value="VolumeSlider"/>
+		</config-file>
+
+		
+		<header-file src="src/ios/VolumeSlider.h" />
+		<source-file src="src/ios/VolumeSlider.m" />
+	</platform>
+</plugin>
