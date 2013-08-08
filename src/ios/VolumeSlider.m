@@ -18,7 +18,7 @@
 @synthesize webView;
 #endif
 
--(PGPlugin*) initWithWebView:(UIWebView*)theWebView
+-(CDVPlugin*) initWithWebView:(UIWebView*)theWebView
 {
     self = (VolumeSlider*)[super initWithWebView:theWebView];
     return self;
