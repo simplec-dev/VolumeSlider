@@ -32,5 +32,8 @@
 		
 		<header-file src="src/ios/VolumeSlider.h" />
 		<source-file src="src/ios/VolumeSlider.m" />
+		
+        <framework src="MediaPlayer.framework" />
+		
 	</platform>
 </plugin>
