@@ -15,21 +15,21 @@ var VolumeSlider = function() {
 /**
  * Create a volume slider.
  */
-VolumeSlider.prototype.createVolumeSlider = function(originx,originy,width,height) {
-	cordovaRef.exec(null, null, "VolumeSlider","createVolumeSlider", [originx, originy, width, height]);
+VolumeSlider.prototype.createVolumeSlider = function(originx,originy,width,height, callback) {
+	cordovaRef.exec(callback, null, "VolumeSlider","createVolumeSlider", [originx, originy, width, height]);
 };
 
 /**
  * Show the volume slider
  */
-VolumeSlider.prototype.showVolumeSlider = function() {
-	cordovaRef.exec(null, null, "VolumeSlider","showVolumeSlider", []);
+VolumeSlider.prototype.showVolumeSlider = function(callback) {
+	cordovaRef.exec(callback, null, "VolumeSlider","showVolumeSlider", []);
 };
 /**
  * Hide the volume slider
  */
-VolumeSlider.prototype.hideVolumeSlider = function() {
-	cordovaRef.exec(null, null, "VolumeSlider","hideVolumeSlider", []);
+VolumeSlider.prototype.hideVolumeSlider = function(callback) {
+	cordovaRef.exec(callback, null, "VolumeSlider","hideVolumeSlider", []);
 };
 
 if (cordovaRef) {

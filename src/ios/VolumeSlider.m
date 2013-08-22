@@ -35,24 +35,12 @@
 #pragma mark -
 #pragma mark VolumeSlider
 
-- (void) createVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
-{	
-	self.callbackId = arguments.pop;
-	NSUInteger argc = [arguments count];
-	
-	if (argc < 3) { // at a minimum we need x origin, y origin and width...
-		return;	
-	}
-	
-	CGFloat originx,originy,width;
-	CGFloat height = 30;
-	
-	originx = [[arguments objectAtIndex:0] floatValue];
-	originy = [[arguments objectAtIndex:1] floatValue];
-	width = [[arguments objectAtIndex:2] floatValue];
-	if (argc < 4) {
-		height = [[arguments objectAtIndex:3] floatValue];
-	}
+- (void)createVolumeSlider:(CDVInvokedUrlCommand*)command
+{		
+	CGFloat originx = [[command.arguments objectAtIndex:0] floatValue];
+	CGFloat originy = [[command.arguments objectAtIndex:1] floatValue];
+	CGFloat width = [[command.arguments objectAtIndex:2] floatValue];
+	CGFloat height = [[command.arguments objectAtIndex:3] floatValue];
 	
 	CGRect viewRect = CGRectMake(
 								 originx, 
@@ -70,13 +58,13 @@
 	self.myVolumeView.showsVolumeSlider = NO;
 }
 
-- (void)showVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)showVolumeSlider:(CDVInvokedUrlCommand*)command
 {
 	self.myVolumeView.showsVolumeSlider = YES;
 	self.mpVolumeViewParentView.hidden = NO;
 }
 
-- (void)hideVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+- (void)hideVolumeSlider:(CDVInvokedUrlCommand*)command
 {
 	self.mpVolumeViewParentView.hidden = YES;
 	self.myVolumeView.showsVolumeSlider = NO;

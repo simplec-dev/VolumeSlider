@@ -23,9 +23,9 @@
 @property (nonatomic, retain) UIView* mpVolumeViewParentView;
 @property (nonatomic, retain) MPVolumeView* myVolumeView;
 
-- (void)createVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-- (void)showVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-- (void)hideVolumeSlider:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)createVolumeSlider:(CDVInvokedUrlCommand*)command;
+- (void)showVolumeSlider:(CDVInvokedUrlCommand*)command;
+- (void)hideVolumeSlider:(CDVInvokedUrlCommand*)command;
 
 @end
 
